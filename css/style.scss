@@ -1,0 +1,539 @@
+// mixins settings
+@import "media";
+
+@mixin inter {
+   font-family: 'Inter',
+      sans-serif;
+}
+
+@mixin mulish {
+   font-family: 'Mulish',
+      sans-serif;
+}
+
+@mixin pd {
+   font-family: 'Playfair Display',
+      serif;
+}
+
+@mixin l {
+   font-weight: 300;
+}
+
+@mixin r {
+   font-weight: 400;
+}
+
+@mixin m {
+   font-weight: 500;
+}
+
+@mixin sb {
+   font-weight: 600;
+}
+
+@mixin b {
+   font-weight: 700;
+}
+
+
+// -- mixins settings
+
+// templates settings
+.btn-white{
+   background-color: #fff;
+   border: 1px solid #FB8F1D;
+   border-radius: 8px;
+   transition: 0.6s all;
+   a{
+      color: #FB8F1D;
+   }
+   &:hover{
+      background-color: #FB8F1D;
+      border: 1px solid #FB8F1D;
+      border-radius: 8px;
+      transition: 0.6s all;
+      a {
+         color: #fff;
+      }
+   }
+}
+.btn-orange{
+   background-color: #FB8F1D;
+   border: 1px solid #FB8F1D;
+   border-radius: 8px;
+   transition: 0.6s all;
+   a {
+      color: #fff;
+   }
+   &:hover {
+      background-color: #fff;
+      border: 1px solid #FB8F1D;
+      border-radius: 8px;
+      transition: 0.6s all;
+      
+      a {
+         color: #FB8F1D;
+      }
+   }
+}
+.ta-c{
+   text-align: center;
+}
+.mb-24 {
+   margin-bottom: 24px;
+}
+.mb-40 {
+   margin-bottom: 40px;
+}
+
+
+.rating-area {
+   overflow: hidden;
+   width: 210px;
+}
+
+.rating-area:not(:checked)>input {
+   display: none;
+}
+
+.rating-area:not(:checked)>label {
+   float: right;
+   width: 42px;
+   padding: 0;
+   cursor: pointer;
+   font-size: 32px;
+   line-height: 32px;
+   color: lightgrey;
+   text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked)>label:before {
+   content: '★';
+}
+
+.rating-area>input:checked~label {
+   color: gold;
+   text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked)>label:hover,
+.rating-area:not(:checked)>label:hover~label {
+   color: gold;
+}
+
+.rating-area>input:checked+label:hover,
+.rating-area>input:checked+label:hover~label,
+.rating-area>input:checked~label:hover,
+.rating-area>input:checked~label:hover~label,
+.rating-area>label:hover~input:checked~label {
+   color: gold;
+   text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area>label:active {
+   position: relative;
+}
+// -- templates settings
+
+// General settings
+body{
+   h2{
+      margin-bottom: 20px;
+   }
+   p{
+      margin-bottom: 40px;
+   }
+   box-sizing: border-box;
+   a{
+      text-decoration: none;
+   }
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6{
+      color: #000;
+   }
+}
+.contain {
+   max-width: 1200px;
+   width: 100%;
+   margin: 0 auto;
+}
+// -- General settings
+
+//  sections settings
+header{
+   nav{
+      display: flex;
+      margin-top: 45px;
+      .logo{
+         &-img{
+            width: 41px;
+            height: 41px;
+         }
+      }
+      .navi{
+         display: flex;
+         
+         margin-left: auto;
+         .menu{
+            margin: auto 0px;
+            &-item{
+               display: inline-block;
+               list-style-type: none;
+            }
+            &-link{
+               @include inter();
+               @include r();
+               margin-right: 34px;
+               font-size: 16px;
+               color: #B8BECD;
+               &:hover{
+                  @include inter();
+                  @include m();
+                  font-size: 16px;
+                  color: #202336;
+               }
+            }
+         }
+         .pushbutton{
+
+            &-btn{
+               margin-right: 18px;
+               height: 44px;
+               width: 132px;
+               &:nth-child(2){
+                  margin-right: 0px;
+               }
+               &-link{
+                  @include inter();
+                  @include m();
+                  font-size: 15px;
+               }
+            }
+         }
+      }
+   }
+}
+
+.head-promo{
+   .shell {
+      display: flex;
+      .item{
+         background: url(../img/bg/bg-head.svg) center center/100% no-repeat;
+      }
+   }
+   margin-top: 110px;
+   h1{
+      @include pd();
+      @include b();
+      font-size: 64px;
+   }
+   h3{
+      @include inter();
+      @include sb();
+      margin-top: 74px;
+      font-size: 22px;
+   }
+   .line{
+      margin: 21px 0px 13px 0px;
+      width: 32px;
+      height: 1px;
+      border-bottom: 2px solid #000;
+   }
+   .list{
+      margin-top: 35px;
+      select{
+         display: inline-block;
+         margin-right: 30px;
+         padding: 0px 0px 0px 30px;
+         width: 220px;
+         height: 52px;
+         border: 1px solid #AFB0B9;
+         border-radius: 6px;
+      }
+      .form-select{
+         background-position: right 1.5rem center;
+      }
+   }
+   .promo-btn{
+      margin: 51px 0px 47px 0px;
+      width: 180px;
+      height: 52px;
+      &-link{
+         @include mulish();
+         @include b();
+         font-size: 17px;
+      }
+   }
+}
+
+.way-promo{
+   margin-top: 290px;
+   .shell{
+      display: flex;
+   }
+   &-item{
+      margin: 113px 0px 113px 130px;
+      background: url(../img/bg/way-promo-bg2.svg) 50% 50%/ 80% no-repeat;
+      &-head{
+         h2{
+            @include pd();
+            @include b();
+            font-size: 36px;
+         }
+      }
+      &-text{
+
+         @include mulish();
+         @include l();
+         color: #7D7987;
+         font-size: 17px;
+      }
+      &-btn{
+         .promo-btn{
+            @include inter();
+            @include sb();
+            width: 164px;
+            height: 48px;
+            font-size: 16px;
+         }
+      }
+   }
+}
+
+.featured{
+   margin-top: 292px;
+   background: url(../img/bg/featured-bg.svg) 50% 50% /contain no-repeat;
+   &-item{
+      display: flex;
+      .head{
+         h2{
+            margin-bottom: 0;
+            @include pd();
+            @include b();
+            font-size: 36px;
+         }
+      }
+      .view{
+         margin: auto 0px auto auto;
+         a{
+            display: block;
+            @include inter();
+            @include sb();
+            color: #FB8F1D;
+            font-size: 17px;
+         }
+      }
+   }
+   .featured-block{
+      display: grid;
+      grid-template-columns: 261px 261px 261px 261px;
+      justify-content: space-between;
+      
+      &-new{
+         position: relative;
+         width: 261px;
+         height: 330px;
+         margin-right: 25px;
+         border-radius: 8px;
+         &:nth-child(4){
+            margin-right: 0;
+         }
+         &-description{
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            padding: 11px 0px 0px 0px;
+            border-radius: 0px 8px 0px 0px;
+            width: 120px;
+            height: 56px;
+            background-color: #fff;
+            h4{
+               @include inter();
+               @include sb();
+               font-size: 17px;
+               color: #042521;
+            }
+            h5{
+               @include inter();
+               @include m();
+               font-size: 15px;
+               color: #80918E;
+            }
+         }
+      }
+      .new1{
+         background: url(../img/bg/new-bg1.png) 50% 50%/100% no-repeat;
+      }
+      .new2{
+         background: url(../img/bg/new-bg2.png) 50% 50%/100% no-repeat;
+      }
+      .new3{
+         background: url(../img/bg/new-bg3.png) 50% 50%/100% no-repeat;
+      }
+      .new4{
+         background: url(../img/bg/new-bg4.png) 50% 50%/100% no-repeat;
+      }
+   }
+}
+
+.way-guides{
+   margin-top: 231px;
+   margin: 231px 0px 240px 0px;
+   .shell{
+      display: flex;
+      .way-promo-item{
+         background: url(../img/bg/guides-bg2.svg) 50% 50%/contain no-repeat;
+         margin: 113px 130px 113px 0px;
+      }
+   }
+}
+
+.testimonials{
+   margin-bottom: 240px;
+   .shell{
+      display: flex;
+   }
+   &-text{
+      width: 100%;
+      h2{
+         margin-bottom: 140px;
+         @include pd();
+         @include b();
+         font-size: 36px;
+      }
+      &-description{
+         margin-top: 30px;
+         @include mulish();
+         @include r();
+         font-size: 24px;
+         color: #000;
+      }
+      &-name{
+         h4{
+            @include inter();
+            @include b();
+            font-size: 22px;
+         }
+         h5{
+            @include inter();
+            @include r();
+            font-size: 18px;
+         }
+      }
+   }
+   &-slider{
+      width: 384px;
+      .involucre{
+         width: 384px;
+         height: 491px;
+      }
+      .border{
+         border-radius: 8px;
+      }
+   }
+}
+
+.stories{
+   margin-bottom: 270px;
+   &-item{
+      display: grid;
+      grid-template-columns: 261px 261px 261px 261px;
+      justify-content: space-between;
+      &-block{
+         .stories1{
+            background: url(../img/bg/stories-bg1.png) 50% 0%/100% no-repeat;
+         }
+         .stories2{
+            background: url(../img/bg/stories-bg2.png) 50% 0%/100% no-repeat;
+         }
+         .stories3{
+            background: url(../img/bg/stories-bg3.png) 50% 0%/100% no-repeat;
+         }
+         .stories4{
+            background: url(../img/bg/stories-bg4.png) 50% 0%/100% no-repeat;
+         }
+         &:nth-child(4){
+            margin-right: 0;
+         }
+         &-img{
+            width: 261px;
+            height: 231px;
+            border-radius: 8px 8px 0px 0px;
+         }
+         &-description{
+            h4{
+               @include inter();
+               @include b();
+               font-size: 19px;
+            }
+         }
+         &-text{
+            @include inter();
+            @include r();
+            font-size: 15px;
+            color: #7D7987;
+            }
+            &-more{
+               a {
+                  @include inter();
+                  @include sb();
+                  color: #FB8F1D;
+                  font-size: 15px;
+               }
+            }
+         }
+      }
+   }
+
+   footer{
+      background-color: #F9F9FB;
+      .shell{
+         padding-top: 70px;
+         a,
+         .info,
+         .shell-item-block-text{
+            @include mulish();
+            @include l();
+            font-size: 18px;
+            color: #848484;
+         }
+         &-item{
+            display: flex;
+            justify-content: space-between;
+            &-block{
+               h4{
+                  display: block;
+                  margin-bottom: 20px;
+                  @include mulish();
+                  @include b();
+                  font-size: 19px;
+               }
+               a{
+                  display: block;
+                  line-height: 35px;
+               }
+            }
+         }
+      }
+      .social{
+         margin-top: 114px;
+         padding-bottom: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         
+         a{
+            margin-right: 35px;
+            &:nth-child(5){
+               margin-right: 0;
+            }
+         }
+      }
+   }
+// -- sections settings
+
